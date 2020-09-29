@@ -1,0 +1,36 @@
+﻿<Page x:Class="LANChat.ServerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LANChat"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1050"
+      Title="ServerPage">
+
+    <Grid>
+        <Button Name="Start" Content="Start" Margin="0,30,25,0" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="75" FontSize="20" Click="ServerStartButton" Width="88"/>
+        <Label Name="IpInfo" Content="Null" HorizontalAlignment="Right" Margin="0,65,25,0" VerticalAlignment="Top" Width="88" Loaded="IpInfo_Loaded"/>
+        <ListBox  Name="LogContainer" HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" VerticalAlignment="Top" Width="420">
+            <ListBox.ItemTemplate>
+                <DataTemplate x:Name="TempLogBox">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="{Binding BackColor}"  Text="{Binding InerText}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox  Name="ClientsContainer" HorizontalAlignment="Left" Height="550" Margin="452,10,0,0" VerticalAlignment="Top" Width="420">
+            <ListBox.ItemTemplate>
+                <DataTemplate x:Name="TempClientBox">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="{Binding BackColor}"  Text="{Binding InerText}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox Name="ServerNameTextBox" MaxLength="36" FontSize="16" Margin="0,110,25,0" TextWrapping="Wrap" Text="Name" HorizontalAlignment="Right" Width="122" Height="28" VerticalAlignment="Top" BorderThickness="2,2,1,1"/>
+
+    </Grid>
+</Page>
